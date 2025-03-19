@@ -1,0 +1,120 @@
+* {
+  margin-top: 0;
+  box-sizing: border-box;
+}/* Container Styling */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Instead of height: 100vh */
+  padding: 20px;
+  padding-top: 50px;
+  margin-top: 50px;
+  gap: 50px;
+  background: #f8f9fa;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  overflow: auto; /* Allows scrolling */
+}
+
+/* Form Section */
+.form-section {
+  flex: 1;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Heading */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Elements */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields */
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Input Group (First Name & Last Name) */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+/* Gender Group */
+.gender-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Button Styling */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 3px 10px rgba(0, 91, 187, 0.3);
+}
+
+/* Login Link */
+.login-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-text a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Image Styling */
+img {
+  width: 420px;
+  height: auto;
+  border-radius: 10px;
+}

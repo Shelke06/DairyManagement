@@ -1,0 +1,18 @@
+html, body, #root {
+  height:auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin: auto;
+}
+
+.main-content {
+  flex: 6; /* Pushes the footer to the bottom */
+}
+
+.footer {
+  width:max-content;
+  margin-bottom: 0;
+  position: fixed;
+}
