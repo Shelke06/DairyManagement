@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 import '../styles/Home.css';
 import userIcon from '../assets/icons/user.png';
 import productIcon from '../assets/icons/product.png';
@@ -38,7 +39,7 @@ const Home = () => {
         <motion.h1
           initial={{ x: "100%", opacity: 0 }} // Start off-screen (right side)
           animate={{ x: 0, opacity: 1 }} // Move to the center
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 2, ease: "easeOut" }}
         >
           Join the digital dairy revolution today! Experience a smarter, automated, and more profitable dairy ecosystem.
         </motion.h1>
@@ -47,7 +48,7 @@ const Home = () => {
         <motion.p
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }} // Delayed effect
+          transition={{ duration: 2, ease: "easeOut", delay: 0.5 }} // Delayed effect
         >
           Streamlining dairy operations for a sustainable future.
         </motion.p>
