@@ -33,11 +33,26 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <section id="hero" className="hero-container">
-        <div className="hero-overlay">
-          <h1>Empowering Dairy Digitalization</h1>
-          <p>Streamlining dairy operations for a sustainable future.</p>
-        </div>
-      </section>
+      <div className="hero-overlay">
+        {/* Animated Heading */}
+        <motion.h1
+          initial={{ x: "100%", opacity: 0 }} // Start off-screen (right side)
+          animate={{ x: 0, opacity: 1 }} // Move to the center
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          Join the digital dairy revolution today! Experience a smarter, automated, and more profitable dairy ecosystem.
+        </motion.h1>
+
+        {/* Animated Paragraph */}
+        <motion.p
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }} // Delayed effect
+        >
+          Streamlining dairy operations for a sustainable future.
+        </motion.p>
+      </div>
+    </section>
 
       {/* About Us Section */}
       <section id="about" className="content-section">
