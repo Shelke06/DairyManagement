@@ -9,6 +9,9 @@ import FarmerLogin from './pages/FarmerLogin';
 import SocietyLogin from './pages/SocietyLogin';
 import Register from './pages/Register';
 import './styles/Home.css';
+import FarmerRegister from "./components/FarmerRegister";
+import FarmerSetup from "./components/FarmerSetup";
+import FarmerDashboard from "./components/FarmerDashboard";
 
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
         <Route path="/farmer-login" element={<FarmerLogin />} />
         <Route path="/society-login" element={<SocietyLogin />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<FarmerRegister />} />
+        <Route path="/farmer-setup" element={<FarmerSetup />} />
+        <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
       </Routes>
       <Footer />
     </Router>

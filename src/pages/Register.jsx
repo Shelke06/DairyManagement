@@ -1,11 +1,23 @@
 import React, { useEffect } from "react";
 import "../styles/AuthForms.css";
 import mycreate from '../assets/icons/createacc.png';
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
-const Register = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const FarmerRegister = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    // Simulating API request (replace with backend call)
+    const newFarmer = { id: "456", ...formData, isNew: true };
+
+    login(newFarmer);
+    navigate("/farmer-setup"); // Redirect to Setup Page
+  };
 
   return (
     <div className="auth-container">

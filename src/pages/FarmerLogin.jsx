@@ -1,11 +1,27 @@
-import React, { useEffect } from "react";
-import "../styles/AuthForms.css";
-import farmerImage from "../assets/icons/signin.png"; // Add an image in assets
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const FarmerLogin = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    // Simulating API request (replace with backend call)
+    const farmerData = {
+      id: "123",
+      name: "John Doe",
+      email: email,
+      isNew: false, // Simulate existing user
+    };
+
+    login(farmerData);
+    navigate("/farmer-dashboard"); // Redirect to dashboard
+  };
 
   return (
     <div className="auth-container">
