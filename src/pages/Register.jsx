@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/AuthForms.css";
 import mycreate from '../assets/icons/createacc.png';
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-const FarmerRegister = () => {
+const Register = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
