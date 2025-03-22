@@ -21,15 +21,14 @@ const FarmerLogin = () => {
       isNew: false, // Simulate existing user
     };
 
-    login(farmerData);
-    navigate("/farmer-dashboard"); // Redirect to dashboard
+    login(farmerData, navigate);
   };
 
   return (
     <div className="auth-container">
       <div className="form-section">
         <h2>Farmer Login</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="password" placeholder="Password" required />
           <button type="submit">Login</button>

@@ -10,14 +10,16 @@ export const AuthProvider = ({ children }) => {
     if (storedUser) setUser(storedUser);
   }, []);
 
-  const login = (userData) => {
+  const login = (userData, navigate) => {
     setUser(userData);
     localStorage.setItem("farmerUser", JSON.stringify(userData));
+    navigate("/farmer-dashboard"); // ✅ Now we pass navigate as an argument
   };
 
-  const logout = () => {
+  const logout = (navigate) => {
     setUser(null);
     localStorage.removeItem("farmerUser");
+    navigate("/farmer-login"); // ✅ Now we pass navigate as an argument
   };
 
   return (
