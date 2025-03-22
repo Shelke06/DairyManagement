@@ -41,17 +41,25 @@ const Home = () => {
           animate={{ x: 0, opacity: 1 }} // Move to the center
           transition={{ duration: 2, ease: "easeOut" }}
         >
-          Join the digital dairy revolution today! Experience a smarter, automated, and more profitable dairy ecosystem.
+          Join the digital dairy revolution today!
+        </motion.h1>
+
+        <motion.h1
+          initial={{ x: "100%", opacity: 0 }} // Start off-screen (right side)
+          animate={{ x: 0, opacity: 1 }} // Move to the center
+          transition={{ duration: 2.5, ease: "easeOut" }}
+        >
+         Experience a smarter, automated, and more profitable dairy ecosystem.
         </motion.h1>
 
         {/* Animated Paragraph */}
-        <motion.p
+        <motion.h3
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut", delay: 0.5 }} // Delayed effect
+          transition={{ duration: 3, ease: "easeOut", delay: 0.5 }} // Delayed effect
         >
           Streamlining dairy operations for a sustainable future.
-        </motion.p>
+        </motion.h3>
       </div>
     </section>
 
