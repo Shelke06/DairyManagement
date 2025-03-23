@@ -10,6 +10,7 @@ import './styles/Home.css';
 import FarmerSetup from "./pages/FarmerSetup";
 import FarmerDashboard from "./pages/FarmerDashboard";
 import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
+import MilkCollection from "./pages/MilkCollection";
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/register" element={<FarmerRegister />} />
           <Route path="/farmer-setup" element={<FarmerSetup />} />
           <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
+          <Route path="/milk-collection" element={<MilkCollection />} />
         </Routes>
         <Footer />
       </Router>
