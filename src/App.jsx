@@ -6,11 +6,10 @@ import Home from './components/Home';
 import FarmerLogin from './pages/FarmerLogin';
 import SocietyLogin from './pages/SocietyLogin';
 import FarmerRegister from './pages/FarmerRegister';
-import './styles/Home.css';
 import FarmerSetup from "./pages/FarmerSetup";
 import FarmerDashboard from "./pages/FarmerDashboard";
-import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
 import MilkCollection from "./pages/MilkCollection";
+import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
 
 function App() {
   useEffect(() => {
@@ -31,17 +30,18 @@ function App() {
   return (
     <AuthProvider> {/* Wrap everything inside AuthProvider */}
       <Router>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/farmer-login" element={<FarmerLogin />} />
-          <Route path="/society-login" element={<SocietyLogin />} />
-          <Route path="/register" element={<FarmerRegister />} />
-          <Route path="/farmer-setup" element={<FarmerSetup />} />
+          {/* Public Routes (Home, Login, Register) */}
+          <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
+          <Route path="/farmer-login" element={<><Navbar /><FarmerLogin /><Footer /></>} />
+          <Route path="/society-login" element={<><Navbar /><SocietyLogin /><Footer /></>} />
+          <Route path="/register" element={<><Navbar /><FarmerRegister /><Footer /></>} />
+
+          {/* Farmer Portal (Dashboard, Setup, Collection) - No Navbar & Footer */}
           <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
+          <Route path="/farmer-setup" element={<FarmerSetup />} />
           <Route path="/milk-collection" element={<MilkCollection />} />
         </Routes>
-        <Footer />
       </Router>
     </AuthProvider>
   );
