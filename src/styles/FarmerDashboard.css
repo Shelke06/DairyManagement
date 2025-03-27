@@ -4,6 +4,10 @@
     height: 100vh;
   }
 /* ✅ Hide Navbar only on Dashboard */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 456879d7fcf5e0a9e0d9e83e25aced037a8c46c2
   /* Sidebar */
   .sidebar {
     width: 250px;
@@ -97,4 +101,4 @@
     color: white;
     margin-top: 15px;
   }
-  
+   
