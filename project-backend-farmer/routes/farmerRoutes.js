@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
         const isMatch = await bcrypt.compare(password, farmer.password);
         if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
-        const token = jwt.sign({ id: farmer._id }, 'mySecretKey', { expiresIn: '1h' });
+        const token = jwt.sign({ id: farmer._id }, 'farmerportal@', { expiresIn: '1h' });
         res.json({ message: "Login successful", token });
     } catch (err) {
         res.status(500).json({ message: err.message });

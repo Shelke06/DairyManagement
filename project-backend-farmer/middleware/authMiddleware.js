@@ -6,7 +6,7 @@ const protect = (req, res, next) => {
     if (!token) return res.status(401).json({ message: "No token, authorization denied" });
 
     try {
-        const decoded = jwt.verify(token, 'mySecretKey');
+        const decoded = jwt.verify(token, 'farmerportal@');
         req.farmer = decoded;
         next();
     } catch (err) {

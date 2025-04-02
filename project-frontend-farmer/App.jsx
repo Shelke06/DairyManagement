@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import FarmerLogin from './pages/FarmerLogin';
-import SocietyLogin from './pages/SocietyLogin';
-import FarmerRegister from './pages/FarmerRegister';
-import FarmerSetup from "./pages/FarmerSetup";
-import FarmerDashboard from "./pages/FarmerDashboard";
-import MilkCollection from "./pages/MilkCollection";
-import DailyRecords from './pages/DailyRecords';
-import MonthlyReports from './pages/MonthlyReports';
-import PaymentBank from './pages/PaymentBank';
-import ProfileSettings from './pages/ProfileSettings';
-import Logout from './pages/Logout';
-import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
+import Navbar from './src/components/Navbar';
+import Footer from './src/components/Footer';
+import Home from './src/components/Home';
+import FarmerLogin from './src/pages/FarmerLogin';
+import SocietyLogin from './src/pages/SocietyLogin';
+import FarmerRegister from './src/pages/FarmerRegister';
+import FarmerSetup from "./src/pages/FarmerSetup";
+import FarmerDashboard from "./src/pages/FarmerDashboard";
+import MilkCollection from "./src/pages/MilkCollection";
+import DailyRecords from './src/pages/DailyRecords';
+import MonthlyReports from './src/pages/MonthlyReports';
+import PaymentBank from './src/pages/PaymentBank';
+import ProfileSettings from './src/pages/ProfileSettings';
+import Logout from './src/pages/Logout';
+import { AuthProvider } from "./src/context/AuthContext"; // Import AuthContext
 
 function App() {
   useEffect(() => {
