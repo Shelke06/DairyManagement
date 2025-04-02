@@ -9,6 +9,11 @@ import FarmerRegister from './pages/FarmerRegister';
 import FarmerSetup from "./pages/FarmerSetup";
 import FarmerDashboard from "./pages/FarmerDashboard";
 import MilkCollection from "./pages/MilkCollection";
+import DailyRecords from './pages/DailyRecords';
+import MonthlyReports from './pages/MonthlyReports';
+import PaymentBank from './pages/PaymentBank';
+import ProfileSettings from './pages/ProfileSettings';
+import Logout from './pages/Logout';
 import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
 
 function App() {
@@ -41,6 +46,11 @@ function App() {
           <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
           <Route path="/farmer-setup" element={<FarmerSetup />} />
           <Route path="/milk-collection" element={<MilkCollection />} />
+          <Route path="/daily-records" element={<DailyRecords />} />
+            <Route path="/monthly-reports" element={<MonthlyReports />} />
+            <Route path="/payment-bank" element={<PaymentBank />} />
+            <Route path="/profile-settings" element={<ProfileSettings />} />
+            <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
     </AuthProvider>

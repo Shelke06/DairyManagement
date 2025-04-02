@@ -47,7 +47,7 @@ const Home = () => {
         <motion.h1
           initial={{ x: "100%", opacity: 0 }} // Start off-screen (right side)
           animate={{ x: 0, opacity: 1 }} // Move to the center
-          transition={{ duration: 2.5, ease: "easeOut" }}
+          transition={{ duration: 3, ease: "easeOut" }}
         >
          Experience a smarter, automated, and more profitable dairy ecosystem.
         </motion.h1>
@@ -69,7 +69,7 @@ const Home = () => {
         <h2>About Us</h2>
         
         <p>
-          Welcome to <strong>[Your App Name]</strong>, an innovative Dairy Management System developed by 
+          Welcome to <strong>DairyPro By PIBM</strong>, an innovative Dairy Management System developed by 
           students of <strong>Pratibha Institute of Business Management</strong>. 
           Our mission is to replace <strong>manual record-keeping with a digital platform</strong>, 
           making transactions <strong>faster, transparent, and efficient</strong> for both <strong>farmers</strong> and 
