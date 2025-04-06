@@ -1,0 +1,87 @@
+/* General Styling */
+.profit-analysis-section {
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profit-analysis-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.profit-analysis-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  color: var(--body-text); /* Matches body text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.card-body p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.profit-details {
+  list-style: none;
+  padding: 0;
+}
+
+.profit-details li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Chart Section */
+.chart-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.chart-placeholder {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05); /* Light placeholder background */
+  border-radius: 8px;
+  color: var(--body-text); /* Dynamic text color */
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profit-analysis-section {
+    padding: 15px;
+  }
+
+  .profit-analysis-section h2 {
+    font-size: 24px;
+  }
+
+  .chart-placeholder {
+    height: 200px;
+    font-size: 14px;
+  }
+}

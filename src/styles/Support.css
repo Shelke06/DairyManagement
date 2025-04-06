@@ -1,0 +1,86 @@
+/* General Styling */
+.support-section {
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.support-section h2 {
+  font-size: 28px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.card {
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  color: var(--body-text); /* Matches body text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.card-body h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.faq-list li strong {
+  color: var(--sidebar-text); /* Highlight questions */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .support-section {
+    padding: 15px;
+  }
+
+  .faq-section {
+    padding: 15px;
+  }
+
+  .card-body h3,
+  .faq-section h3 {
+    font-size: 20px;
+  }
+
+  .contact-info li,
+  .faq-list li {
+    font-size: 14px;
+  }
+}

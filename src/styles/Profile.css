@@ -1,0 +1,306 @@
+/* General Styling */
+.profile-section {
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.profile-section h2 {
+  font-size: 28px;
+  color: var(--body-text); /* Dynamic text color */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Tabs Styling */
+.tabs-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--sidebar-text);
+}
+
+.tabs-trigger {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--sidebar-text);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tabs-trigger:hover,
+.tabs-trigger[data-state="active"] {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Profile Picture Section */
+.profile-picture-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--sidebar-text); /* Matches sidebar text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture-section label {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile-picture-section .btn {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  color: var(--body-text); /* Matches body text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.card-content {
+  padding: 20px;
+}
+
+/* Avatar Styling */
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--sidebar-text);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--sidebar-text);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styling */
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--sidebar-text);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+/* Switch Styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--sidebar-text);
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.switch input:checked + .switch::before {
+  background-color: var(--primary-color);
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.switch input:checked + .switch::after {
+  transform: translateX(20px);
+}
+
+/* Personal Information Section */
+.personal-info {
+  list-style: none;
+  padding: 0;
+}
+
+.personal-info li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal-info li strong {
+  font-weight: bold;
+  color: var(--sidebar-text); /* Highlighted text color */
+}
+
+/* Account Settings Section */
+.account-settings {
+  list-style: none;
+  padding: 0;
+}
+
+.account-settings li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-settings button {
+  font-size: 14px;
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.account-settings button:hover {
+  text-decoration: none;
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 15px;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-body h3 {
+    font-size: 20px;
+  }
+
+  .personal-info li,
+  .account-settings li {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .personal-info li strong,
+  .account-settings li strong {
+    margin-bottom: 5px;
+  }
+
+  .tabs-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabs-trigger {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
