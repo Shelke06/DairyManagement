@@ -1,0 +1,79 @@
+/* General Styling */
+.notifications-section {
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.notifications-section h2 {
+  font-size: 28px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Notification Item Styling */
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notification-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification-message {
+  font-size: 16px;
+  margin: 0;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.notification-date {
+  font-size: 14px;
+  color: var(--sidebar-text); /* Subtle text color for the date */
+}
+
+/* Alert Types */
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.1); /* Light green background */
+  border-left: 5px solid #28a745; /* Green border */
+}
+
+.alert-info {
+  background-color: rgba(23, 162, 184, 0.1); /* Light blue background */
+  border-left: 5px solid #17a2b8; /* Blue border */
+}
+
+.alert-warning {
+  background-color: rgba(255, 193, 7, 0.1); /* Light yellow background */
+  border-left: 5px solid #ffc107; /* Yellow border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notifications-section {
+    padding: 15px;
+  }
+
+  .notification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-date {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}

@@ -1,17 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/AuthForms.css";
 import mycreate from '../assets/icons/createacc.png';
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext.jsx";
 
-const Register = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const FarmerRegister = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    const newFarmer = {
+      id: Date.now(),
+      ...formData,
+      isNew: true,
+    };
+    login(newFarmer, navigate);
+  };
 
   return (
     <div className="auth-container">
       <div>
       <h2>Register</h2>
-      <form>
+      <form onSubmit={handleRegister}>
         {/* User Type Selection */}
         <select name="userType">
           <option value="farmer">Farmer</option>
@@ -61,4 +78,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default FarmerRegister;

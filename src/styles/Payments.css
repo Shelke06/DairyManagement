@@ -1,0 +1,94 @@
+/* General Page Styling */
+.payments-page {
+  padding: 20px;
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 33px;
+  color: var(--body-text);
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: var(--body-text);
+}
+
+/* Total Earnings Section */
+.total-earnings {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--sidebar-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.total-earnings h4 {
+  font-size: 20px;
+  color: var(--body-text);
+}
+
+/* Table Styling */
+.table {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.table th {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+.card{
+    background-color: var(--sidebar-bg);
+}
+.table td {
+    background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+
+.text-success {
+  font-weight: bold;
+}
+
+.text-warning {
+  font-weight: bold;
+}
+
+/* Button Styling */
+button.btn-primary {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  button.btn-primary {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

@@ -9,6 +9,9 @@ const SocietyLogin = () => {
 
   return (
     <div className="auth-container">
+      <div className="image-section">
+        <img src={societyImage} alt="Society Login" />
+      </div>
       <div className="form-section">
         <h2>Society Login</h2>
         <form>
@@ -18,10 +21,6 @@ const SocietyLogin = () => {
         </form>
 
         <p>Don't have an account? <a href="/register">Register here</a></p>
-      </div>
-
-      <div className="image-section">
-        <img src={societyImage} alt="Society Login" />
       </div>
     </div>
   );
