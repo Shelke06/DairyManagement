@@ -9,7 +9,7 @@ const SocietyLogin = () => {
 
   return (
     <div className="auth-container">
-      <div className="image-section">
+      <div className="image-section">z
         <img src={societyImage} alt="Society Login" />
       </div>
       <div className="form-section">
