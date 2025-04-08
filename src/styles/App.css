@@ -7,11 +7,17 @@ html, body, #root {
 }
 
 .main-content {
-  flex: 6; /* Pushes the footer to the bottom */
+  flex: 6;
+  margin-left: 250px;
+  padding: 20px;
+  background-image: url('/path-to-your-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .footer {
   width:max-content;
-  margin-bottom: 0;
+  margin-bottom: 0%;
   position: fixed;
 }

@@ -1,42 +1,37 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { FaBars, FaHome, FaClipboardList, FaChartLine, FaMoneyBill, FaUser, FaSignOutAlt } from 'react-icons/fa';
 import './Sidebar.css';
 
 const Sidebar = ({ theme, onSidebarToggle }) => {
   const [isSidebarVisible, setSidebarVisible] = useState(true);
-  const navigate = useNavigate(); // Hook to programmatically navigate
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarVisible(!isSidebarVisible);
-    onSidebarToggle(!isSidebarVisible); // Notify parent component about sidebar visibility
+    onSidebarToggle && onSidebarToggle(!isSidebarVisible);
+  };
+
+  const logout = () => {
+    localStorage.removeItem('farmerUser');
+    navigate('/farmer-login');
   };
 
   return (
-    <>
-      {/* Sidebar Toggle Button */}
-      <button
-        className="sidebar-toggle btn btn-outline-primary"
-        onClick={toggleSidebar}
-        style={{
-          position: 'fixed',
-          top: '20px',
-          left: isSidebarVisible ? '260px' : '20px',
-          zIndex: 1000,
-        }}
-      >
-        {isSidebarVisible ? (
-          <i className="fas fa-times"></i> // Cross icon for "Hide Sidebar"
-        ) : (
-          <i className="fas fa-bars"></i> // Bars icon for "Show Sidebar"
-        )}
-      </button>
+    <div className={`sidebar ${isSidebarVisible ? 'open' : 'closed'}`}>
+      {/* Sidebar Header */}
+      <div className="sidebar-header">
+        <button className="toggle-btn" onClick={toggleSidebar}>
+          <FaBars />
+        </button>
+        {isSidebarVisible && <h2 className="logo">DairyPro</h2>}
+      </div>
 
-      {/* Sidebar */}
-      <div className={`sidebar ${isSidebarVisible ? 'visible' : 'hidden'} bg-${theme}`}>
-        {/* Farmer Profile */}
+      {/* Farmer Profile */}
+      {isSidebarVisible && (
         <div className="profile-section" onClick={() => navigate('/profile')} style={{ cursor: 'pointer' }}>
           <img
-            src="src/assets/icons/profile.png" // Default profile picture
+            src="src/assets/icons/profile.png"
             alt="Profile"
             className="profile-pic"
           />
@@ -44,81 +39,69 @@ const Sidebar = ({ theme, onSidebarToggle }) => {
             <h5>John Doe</h5> {/* Replace with dynamic farmer name */}
           </div>
         </div>
+      )}
 
-        {/* Divider Line */}
-        <hr className="sidebar-divider" />
-
-        {/* Navigation Links */}
-        <nav>
-          <ul>
-            <li>
-              <NavLink
-                to="/dashboard"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Dashboard
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/daily-records"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Daily Records
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/monthly-reports"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Monthly Reports
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/payments"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Payments & Bank
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/profit-analysis"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Profit Analysis
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/notifications"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Notifications
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/support"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Support
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/logout"
-                className={({ isActive }) => (isActive ? 'active-link' : '')}
-              >
-                Logout
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </>
+      {/* Navigation Links */}
+      <nav>
+        <ul className="sidebar-menu" style={{ paddingLeft: '0.5rem' }}>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }} // Inherit color from parent
+            >
+              <FaHome style={{ fontSize: '20px', marginRight: '10px' }} /> {/* Icon styling */}
+              {isSidebarVisible && 'Dashboard'}
+            </NavLink>
+          </li>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/daily-records"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <FaClipboardList style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Daily Records'}
+            </NavLink>
+          </li>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/monthly-reports"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <FaChartLine style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Monthly Reports'}
+            </NavLink>
+          </li>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/payments"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <FaMoneyBill style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Payments & Bank'}
+            </NavLink>
+          </li>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <FaUser style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Profile Settings'}
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      <ul className="sidebar-menu">
+        <li className="logout" onClick={logout}>
+          <FaSignOutAlt /> {isSidebarVisible && 'Logout'}
+        </li>
+      </ul>
+    </div>
   );
 };
 

@@ -24,6 +24,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [theme, setTheme] = useState('light'); // Default theme
+  const [isSidebarVisible, setSidebarVisible] = useState(true); // Sidebar visibility state
 
   // Apply theme to the entire document
   useEffect(() => {
@@ -34,20 +35,9 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('.content-section');
-      sections.forEach((section) => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight - 100) {
-          section.classList.add('show');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleSidebarToggle = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
 
   return (
     <AuthProvider>
@@ -66,10 +56,19 @@ function App() {
             element={
               <div className="app">
                 {/* Sidebar */}
-                <Sidebar theme={theme} />
+                <Sidebar theme={theme} onSidebarToggle={handleSidebarToggle} />
 
                 {/* Main Content */}
-                <div className="main-content" style={{ marginLeft: '250px', padding: '20px' }}>
+                <div
+                  className={`main-content ${isSidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}
+                  style={{
+                    padding: '20px',
+                    backgroundImage: 'url("D:\projectDairy\DairyManagement\src\assets\icons\WaterMarkImg.png")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}
+                >
                   {/* Global Theme Toggle */}
                   <div className="theme-toggle" style={{ textAlign: 'right', marginBottom: '20px' }}>
                     <button
@@ -83,7 +82,6 @@ function App() {
 
                   {/* Routes */}
                   <Routes>
-                    <Route path="/" element={<Dashboard />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/daily-records" element={<DailyRecords />} />
                     <Route path="/monthly-reports" element={<MonthlyReports />} />
