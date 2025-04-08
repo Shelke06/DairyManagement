@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Support.css';
+import '../../styles/Farmer/Support.css'; // Updated path
 
 const Support = () => {
   return (

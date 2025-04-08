@@ -2,8 +2,7 @@ import React from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import { jsPDF } from 'jspdf';
 import 'chart.js/auto';
-import '../styles/MonthlyReports.css';
-import { Colors } from 'chart.js/auto';
+import '../../styles/Farmer/MonthlyReports.css';
 
 const MonthlyReports = () => {
   // Sample data for graphs

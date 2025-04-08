@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Profile.css';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Input } from '@/components/ui/input';
+import '../../styles/Farmer/Profile.css'; // Updated path
+import { Avatar, AvatarImage, AvatarFallback } from "../../components/ui/avatar";
+import { Input } from "../../components/ui/input";
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { User } from 'lucide-react';
 
 const Profile = () => {
   const [profilePicture, setProfilePicture] = useState('');
@@ -16,17 +15,23 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    // Simulate fetching user data from an API
     const fetchUserData = async () => {
-      const userData = await fetch('/api/user/profile'); // Replace with your API endpoint
-      const data = await userData.json();
-      setProfilePicture(data.profilePicture || 'https://via.placeholder.com/150');
-      setUserInfo({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        address: data.address,
-      });
+      try {
+        const response = await fetch('/api/user/profile'); // Replace with your API endpoint
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setProfilePicture(data.profilePicture || 'https://via.placeholder.com/150');
+        setUserInfo({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          address: data.address,
+        });
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
     };
 
     fetchUserData();
@@ -53,6 +58,9 @@ const Profile = () => {
           <div className="flex items-center space-x-4">
             <Avatar className="w-40 h-40">
               <AvatarImage src={profilePicture} alt="" />
+              <AvatarFallback>
+                <span className="text-gray-500">No Image</span>
+              </AvatarFallback>
             </Avatar>
             <input
               type="file"
@@ -62,6 +70,7 @@ const Profile = () => {
               id="profile-pic"
             />
             <Label htmlFor="profile-pic" className="cursor-pointer px-3 py-2 bg-gray-200 rounded-md">
+              Upload Picture
             </Label>
           </div>
 

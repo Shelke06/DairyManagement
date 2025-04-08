@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../styles/Logout.css';
+
+import '../../styles/Farmer/Logout.css';
 
 const Logout = () => {
   const navigate = useNavigate();

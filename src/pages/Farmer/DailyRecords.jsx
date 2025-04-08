@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/DailyRecords.css';
+import '../../styles/Farmer/DailyRecords.css';
 
 const DailyRecords = () => {
   const records = [

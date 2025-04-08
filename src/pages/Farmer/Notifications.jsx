@@ -1,7 +1,7 @@
 // filepath: d:\projectDairy\DairyManagement\src\pages\Notifications.jsx
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Notifications.css';
+import '../../styles/Farmer/Notifications.css';
 
 const Notifications = () => {
   const notifications = [

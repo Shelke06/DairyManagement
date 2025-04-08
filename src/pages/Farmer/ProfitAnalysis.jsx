@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/ProfitAnalysis.css';
+import '../../styles/Farmer/ProfitAnalysis.css';
 
 const ProfitAnalysis = () => {
   return (

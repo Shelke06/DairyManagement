@@ -1,7 +1,7 @@
 import React from 'react';
 import { jsPDF } from 'jspdf';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Payments.css';
+import '../../styles/Farmer/Payments.css';
 
 const Payments = () => {
   // Sample payment data
