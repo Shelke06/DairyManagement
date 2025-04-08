@@ -7,14 +7,29 @@ const SocietyLogin = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Example login validation (replace with actual logic)
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    if (email === "society@example.com" && password === "password123") {
+      console.log("Login successful, redirecting to Society Dashboard...");
+      window.location.href = "/society-dashboard"; // Redirect to Society Dashboard
+    } else {
+      alert("Invalid email or password. Please try again.");
+    }
+  };
+
   return (
     <div className="auth-container">
-      <div className="image-section">z
+      <div className="image-section">
         <img src={societyImage} alt="Society Login" />
       </div>
       <div className="form-section">
         <h2>Society Login</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="password" placeholder="Password" required />
           <button type="submit">Login</button>

@@ -4,15 +4,19 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import FarmerLogin from './pages/FarmerLogin';
-import SocietyLogin from './pages/SocietyLogin';
+import SocietyLogin from './pages/Society/SocietyLogin';
 import FarmerRegister from './pages/FarmerRegister';
 import FarmerSetup from "./pages/FarmerSetup";
 import FarmerDashboard from "./pages/FarmerDashboard";
 import MilkCollection from "./pages/MilkCollection";
-import SocietyDashboard from "./pages/SocietyDashboard";
 import FarmerManagement from "./pages/FarmerManagement";
 import PaymentManagement from "./pages/PaymentManagement";
 import Notifications from "./pages/Notifications";
+import FarmerProfile from "./pages/FarmerProfile";
+import Dashboard from "./pages/Society/Dashboard";
+import FarmerManagements from "./pages/Society/FarmerManagement";
+import MilkCollections from "./pages/Society/MilkCollection";
+import PaymentManagements from "./pages/Society/PaymentManagement";
 
 import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
 
@@ -46,12 +50,13 @@ function App() {
           <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
           <Route path="/farmer-setup" element={<FarmerSetup />} />
           <Route path="/milk-collection" element={<MilkCollection />} />
+          <Route path="/farmer-profile/:farmerName" element={<FarmerProfile />} />
 
           {/* Society Portal */}
-          <Route path="/society-dashboard" element={<SocietyDashboard />} />
-          <Route path="/farmer-management" element={<FarmerManagement />} />
-          <Route path="/payment-management" element={<PaymentManagement />} />
-          <Route path="/notifications" element={<Notifications />} />
+          Route path="/society-dashboard" element={<Dashboard />} />
+  <Route path="/society-farmer-management" element={<FarmerManagement />} />
+  <Route path="/society-milk-collection" element={<MilkCollection />} />
+  <Route path="/society-payment-management" element={<PaymentManagement />} />
         </Routes>
       </Router>
     </AuthProvider>
