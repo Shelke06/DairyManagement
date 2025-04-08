@@ -1,0 +1,82 @@
+/* General Page Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: var(--body-text); /* Use dynamic text color */
+}
+div h2{
+    font-size: 30px;
+    color: rgb(121, 133, 21);
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: var(--body-text); /* Use dynamic text color */
+}
+
+/* Chart Container Styling */
+.chart-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: var(--sidebar-bg); /* Dynamic background color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h4 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--body-text); /* Use dynamic text color */
+}
+
+/* Button Styling */
+button.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  button.btn-primary {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

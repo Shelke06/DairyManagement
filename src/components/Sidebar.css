@@ -1,0 +1,118 @@
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar.closed {
+  width: 65px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.logo {
+  color: white;
+  font-size: 24px; /* Increased font size */
+  margin-left: 10px; /* Proper spacing from the toggle button */
+  font-weight: bold;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-section h5 {
+  font-size: 20px; 
+  font-weight: 550;
+  color: black;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  padding-left: 0.5rem;
+  
+}
+
+.sidebar-menu li {
+  padding: 12px 15px; /* Adjust padding for better spacing */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  font-size: 18px; /* Font size for text */
+  color: white; /* Text color */
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar-menu li svg {
+  font-size: 20px; /* Icon size */
+  color: white; /* Icon color */
+}
+
+.sidebar-menu li:hover {
+  background: #674d79; /* Background color on hover */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Logout Link */
+.logout {
+  margin-top: 20px;
+  color: red;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.logout:hover {
+  background: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Sidebar Closed State */
+.sidebar.closed .logo,
+.sidebar.closed .profile-section,
+.sidebar.closed .sidebar-menu li span {
+  display: none;
+}
+
+.sidebar.closed .sidebar-menu li {
+  justify-content: center; /* Center icons when sidebar is closed */
+}
+
+.sidebar.closed .sidebar-menu li svg {
+  font-size: 20px; /* Slightly larger icons for closed state */
+}

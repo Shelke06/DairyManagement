@@ -1,0 +1,18 @@
+.logout-section {
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.logout-section h1 {
+  font-size: 28px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.logout-section p {
+  font-size: 16px;
+  color: var(--sidebar-text); /* Subtle text color */
+}

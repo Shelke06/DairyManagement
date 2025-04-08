@@ -1,0 +1,82 @@
+/* General Styling */
+.content-section {
+  padding: 20px;
+  background-color: var(--body-bg); /* Dynamic background color */
+  color: var(--body-text); /* Dynamic text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+.content-section p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: var(--body-text); /* Dynamic text color */
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  color: var(--body-text); /* Matches body text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+/* Table Styling */
+.table {
+  margin-bottom: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.table th {
+  background-color: var(--sidebar-bg); /* Matches sidebar background */
+  color: var(--sidebar-text); /* Matches sidebar text color */
+  font-weight: bold;
+  text-align: center;
+}
+
+.table td {
+  color: var(--body-text); /* Matches body text color */
+  text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Light stripe for odd rows */
+}
+
+.table-bordered {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for the table */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for cells */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 15px;
+  }
+
+  .content-section h2 {
+    font-size: 24px;
+  }
+
+  .content-section p {
+    font-size: 14px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+}
