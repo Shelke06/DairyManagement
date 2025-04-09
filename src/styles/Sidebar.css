@@ -1,24 +1,20 @@
-/* Sidebar */
 .sidebar {
   width: 250px;
+  background-color: #343a40;
+  color: #fff;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
-  background: #2c3e50;
-  color: white;
   padding: 10px;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  position: relative;
 }
-
 .sidebar.closed {
   width: 65px;
   transition: width 0.3s ease-in-out;
   overflow: hidden;
 }
-
-/* Sidebar Header */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -33,36 +29,12 @@
   font-size: 20px;
   cursor: pointer;
 }
-
 .logo {
   color: white;
   font-size: 24px; /* Increased font size */
   margin-left: 10px; /* Proper spacing from the toggle button */
   font-weight: bold;
 }
-
-/* Profile Section */
-.profile-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-section h5 {
-  font-size: 20px; 
-  font-weight: 550;
-  color: black;
-}
-
-/* Sidebar Menu */
 .sidebar-menu {
   list-style: none;
   padding: 0;
@@ -77,7 +49,13 @@
   gap: 15px; /* Space between icon and text */
   font-size: 18px; /* Font size for text */
   color: white; /* Text color */
-  transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
 }
 
 .sidebar-menu li svg {
@@ -122,3 +100,4 @@
 .sidebar.closed .sidebar-menu li svg {
   font-size: 20px; /* Slightly larger icons for closed state */
 }
+

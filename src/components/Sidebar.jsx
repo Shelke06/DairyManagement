@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { FaBars, FaHome, FaClipboardList, FaChartLine, FaMoneyBill, FaUser, FaSignOutAlt } from 'react-icons/fa';
 import './Sidebar.css';
 
-const Sidebar = ({ theme, onSidebarToggle }) => {
+const Sidebar = ({ onSidebarToggle }) => {
   const [isSidebarVisible, setSidebarVisible] = useState(true);
   const navigate = useNavigate();
 

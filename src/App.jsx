@@ -13,32 +13,21 @@ import ProfitAnalysis from './pages/Farmer/ProfitAnalysis';
 import Notifications from './pages/Farmer/Notifications';
 import Support from './pages/Farmer/Support';
 import FarmerLogin from './pages/FarmerLogin';
-<<<<<<< HEAD
-import SocietyLogin from './pages/Society/SocietyLogin';
-import FarmerRegister from './pages/FarmerRegister';
-import FarmerSetup from "./pages/FarmerSetup";
-import FarmerDashboard from "./pages/FarmerDashboard";
-import MilkCollection from "./pages/MilkCollection";
-import FarmerManagement from "./pages/FarmerManagement";
-import PaymentManagement from "./pages/PaymentManagement";
-import Notifications from "./pages/Notifications";
-import FarmerProfile from "./pages/FarmerProfile";
-import Dashboard from "./pages/Society/Dashboard";
-import FarmerManagements from "./pages/Society/FarmerManagement";
-import MilkCollections from "./pages/Society/MilkCollection";
-import PaymentManagements from "./pages/Society/PaymentManagement";
-
-import { AuthProvider } from "./context/AuthContext"; // Import AuthContext
-=======
 import FarmerRegister from './pages/FarmerRegister';
 import Profile from './pages/Farmer/Profile';
 import Logout from './pages/Farmer/Logout';
 import SocietyLogin from './pages/SocietyLogin';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Farmer/Dashboard';
+import SocietyDashboard from './pages/Society/SocietyDashboard';
 import { AuthProvider } from './context/AuthContext';
+import MilkCollection from './pages/Society/MilkCollection';
+import FarmerManagement from './pages/Society/FarmerManagement';
+import PaymentManagement from './pages/Society/PaymentManagement';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
->>>>>>> f06e1ef3dc6d65b06e96288807876858baa63b74
+import { ProtectedRoute } from './context/ProtectedRoute';
+import SocietySidebar from "./components/SocietySidebar";
+import NotificationsSoc from './pages/Society/Notifications';
 
 function App() {
   const [theme, setTheme] = useState('light'); // Default theme
@@ -68,66 +57,113 @@ function App() {
           <Route path="/society-login" element={<><Navbar /><SocietyLogin /><Footer /></>} />
           <Route path="/register" element={<><Navbar /><FarmerRegister /><Footer /></>} />
 
-<<<<<<< HEAD
-          {/* Farmer Portal (Dashboard, Setup, Collection) - No Navbar & Footer */}
-          <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
-          <Route path="/farmer-setup" element={<FarmerSetup />} />
-          <Route path="/milk-collection" element={<MilkCollection />} />
-          <Route path="/farmer-profile/:farmerName" element={<FarmerProfile />} />
-
-          {/* Society Portal */}
-          Route path="/society-dashboard" element={<Dashboard />} />
-  <Route path="/society-farmer-management" element={<FarmerManagement />} />
-  <Route path="/society-milk-collection" element={<MilkCollection />} />
-  <Route path="/society-payment-management" element={<PaymentManagement />} />
-=======
-          {/* Farmer Portal (Dashboard, Daily Records, etc.) */}
+          {/* Farmer Portal */}
           <Route
-            path="/*"
+            path="/dashboard"
             element={
-              <div className="app">
-                {/* Sidebar */}
-                <Sidebar theme={theme} onSidebarToggle={handleSidebarToggle} />
-
-                {/* Main Content */}
-                <div
-                  className={`main-content ${isSidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}
-                  style={{
-                    padding: '20px',
-                    backgroundImage: 'url("D:\projectDairy\DairyManagement\src\assets\icons\WaterMarkImg.png")',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                  }}
-                >
-                  {/* Global Theme Toggle */}
-                  <div className="theme-toggle" style={{ textAlign: 'right', marginBottom: '20px' }}>
-                    <button
-                      className="btn btn-light"
-                      onClick={toggleTheme}
-                      style={{ fontSize: '20px' }}
-                    >
-                      {theme === 'light' ? '🌙' : '☀️'}
-                    </button>
+              <ProtectedRoute role="farmer">
+                <div className="app">
+                  <Sidebar theme={theme} onSidebarToggle={handleSidebarToggle} />
+                  <div
+                    className={`main-content ${isSidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}
+                    style={{
+                      padding: '20px',
+                      backgroundImage: 'url("WaterMarkImg.png")',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                    }}
+                  >
+                    <div className="theme-toggle" style={{ textAlign: 'right', marginBottom: '20px' }}>
+                      <button
+                        className="btn btn-light"
+                        onClick={toggleTheme}
+                        style={{ fontSize: '20px' }}
+                      >
+                        {theme === 'light' ? '🌙' : '☀'}
+                      </button>
+                    </div>
+                    <Routes>
+                      <Route path="/daily-records" element={<DailyRecords />} />
+                      <Route path="/monthly-reports" element={<MonthlyReports />} />
+                      <Route path="/payments" element={<Payments />} />
+                      <Route path="/profit-analysis" element={<ProfitAnalysis />} />
+                      <Route path="/notifications" element={<Notifications />} />
+                      <Route path="/support" element={<Support />} />
+                      <Route path="/logout" element={<Logout />} />
+                      <Route path="/profile" element={<Profile />} />
+                    </Routes>
                   </div>
-
-                  {/* Routes */}
-                  <Routes>
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/daily-records" element={<DailyRecords />} />
-                    <Route path="/monthly-reports" element={<MonthlyReports />} />
-                    <Route path="/payments" element={<Payments />} />
-                    <Route path="/profit-analysis" element={<ProfitAnalysis />} />
-                    <Route path="/notifications" element={<Notifications />} />
-                    <Route path="/support" element={<Support />} />
-                    <Route path="/logout" element={<Logout />} />
-                    <Route path="/profile" element={<Profile />} />
-                  </Routes>
                 </div>
-              </div>
+              </ProtectedRoute>
             }
           />
->>>>>>> f06e1ef3dc6d65b06e96288807876858baa63b74
+
+          {/* Society Portal */}
+          <Route
+            path="/society-dashboard"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <SocietyDashboard />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/society-farmer-management"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <FarmerManagement />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/society-milk-collection"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <MilkCollection />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/society-payment-management"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <PaymentManagement />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/society-notifications"
+  element={
+    <ProtectedRoute role="society">
+      <div className="app">
+        <SocietySidebar />
+        <div className="main-content">
+          <NotificationsSoc />
+        </div>
+      </div>
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </Router>
     </AuthProvider>

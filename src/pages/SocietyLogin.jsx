@@ -1,10 +1,11 @@
+
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/AuthForms.css";
-import farmerImage from "../assets/icons/signin.png";
+import societyImage from "../assets/icons/login.png";
 
-const FarmerLogin = () => {
+const SocietyLogin = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -14,21 +15,21 @@ const FarmerLogin = () => {
     e.preventDefault();
 
     // Simulating API request (replace with backend call)
-    const farmerData = {
-      id: "123",
-      name: "John Doe",
+    const societyData = {
+      id: "456",
+      name: "Society ABC",
       email: email,
-      role: "farmer", // Indicate the role as farmer
+      role: "society", // Indicate the role as society
     };
 
-    login(farmerData); // Update authentication state
-    navigate("/dashboard"); // Redirect to farmer dashboard
+    login(societyData); // Update authentication state
+    navigate("/society-dashboard"); // Redirect to society dashboard
   };
 
   return (
     <div className="auth-container">
       <div className="form-section">
-        <h2>Farmer Login</h2>
+        <h2>Society Login</h2>
         <form onSubmit={handleLogin}>
           <input
             type="email"
@@ -53,10 +54,10 @@ const FarmerLogin = () => {
       </div>
 
       <div className="image-section">
-        <img src={farmerImage} alt="Farmer Login" />
+        <img src={societyImage} alt="Society Login" />
       </div>
     </div>
   );
 };
 
-export default FarmerLogin;
+export default SocietyLogin;

@@ -1,25 +1,16 @@
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // Store authenticated user
 
-  useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("farmerUser"));
-    if (storedUser) setUser(storedUser);
-  }, []);
-
-  const login = (userData, navigate) => {
-    setUser(userData);
-    localStorage.setItem("farmerUser", JSON.stringify(userData));
-    navigate("/farmer-dashboard"); // ✅ Now we pass navigate as an argument
+  const login = (userData) => {
+    setUser(userData); // Set user data after login
   };
 
-  const logout = (navigate) => {
-    setUser(null);
-    localStorage.removeItem("farmerUser");
-    navigate("/farmer-login"); // ✅ Now we pass navigate as an argument
+  const logout = () => {
+    setUser(null); // Clear user data on logout
   };
 
   return (
