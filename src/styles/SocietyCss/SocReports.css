@@ -1,0 +1,52 @@
+.soc-reports {
+    padding: 20px;
+    background-color: #f8f9fa; 
+    min-height: 100vh;
+  }
+  
+  .soc-reports h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0860b8; 
+  }
+  
+  .soc-reports h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #474843; /* Blue */
+    text-align: left;
+  }
+  
+  .profit-table {
+    width: 50%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+    margin-bottom: 30px;
+    margin-left: 25%;
+  }
+  
+  .profit-table th,
+  .profit-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd; /* Light gray border */
+  }
+  
+  .profit-table th {
+    background-color: #464849; /* Blue header */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .profit-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for even rows */
+  }
+  
+  .profit-table tr:hover {
+    background-color: #f1f1f1; /* Slightly darker gray on hover */
+  }

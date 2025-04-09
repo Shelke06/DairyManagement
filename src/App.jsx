@@ -28,6 +28,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ProtectedRoute } from './context/ProtectedRoute';
 import SocietySidebar from "./components/SocietySidebar";
 import NotificationsSoc from './pages/Society/Notifications';
+import PaymentOptions from './pages/Society/PaymentOptions';
+import SocReports from './pages/Society/SocReports';
 
 function App() {
   const [theme, setTheme] = useState('light'); // Default theme
@@ -59,7 +61,7 @@ function App() {
 
           {/* Farmer Portal */}
           <Route
-            path="/dashboard"
+            path="/dashboard/*" 
             element={
               <ProtectedRoute role="farmer">
                 <div className="app">
@@ -74,16 +76,8 @@ function App() {
                       backgroundRepeat: 'no-repeat',
                     }}
                   >
-                    <div className="theme-toggle" style={{ textAlign: 'right', marginBottom: '20px' }}>
-                      <button
-                        className="btn btn-light"
-                        onClick={toggleTheme}
-                        style={{ fontSize: '20px' }}
-                      >
-                        {theme === 'light' ? '🌙' : '☀'}
-                      </button>
-                    </div>
                     <Routes>
+                      <Route path="" element={<Dashboard />} />
                       <Route path="/daily-records" element={<DailyRecords />} />
                       <Route path="/monthly-reports" element={<MonthlyReports />} />
                       <Route path="/payments" element={<Payments />} />
@@ -152,18 +146,45 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/society-notifications"
-  element={
-    <ProtectedRoute role="society">
-      <div className="app">
-        <SocietySidebar />
-        <div className="main-content">
-          <NotificationsSoc />
-        </div>
-      </div>
-    </ProtectedRoute>
-  }
-/>
+          <Route
+            path="/society-notifications"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <NotificationsSoc />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/payment-options/:farmerId"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <PaymentOptions />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/society-reports"
+            element={
+              <ProtectedRoute role="society">
+                <div className="app">
+                  <SocietySidebar />
+                  <div className="main-content">
+                    <SocReports />
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </AuthProvider>

@@ -1,7 +1,7 @@
 import React , {useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/Sidebar.css";
-import { FaBars, FaHome, FaClipboardList, FaChartLine, FaMoneyBill, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaBars, FaHome, FaClipboardList, FaChartLine, FaMoneyBill, FaUser, FaSignOutAlt, FaFileAlt, FaBell } from 'react-icons/fa';
 
 const SocietySidebar = ({ onSidebarToggle }) => {
   const [isSidebarVisible, setSidebarVisible] = useState(true);
@@ -67,9 +67,10 @@ const SocietySidebar = ({ onSidebarToggle }) => {
                     {isSidebarVisible && 'Milk Collection'}
                   </NavLink>
                 </li>
+                
                 <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <NavLink
-                    to="/socieety-payments-management"
+                    to="/society-payment-management"
                     className={({ isActive }) => (isActive ? 'active-link' : '')}
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
@@ -83,7 +84,7 @@ const SocietySidebar = ({ onSidebarToggle }) => {
                     className={({ isActive }) => (isActive ? 'active-link' : '')}
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    <FaUser style={{ fontSize: '20px', marginRight: '10px' }} />
+                    <FaFileAlt style={{ fontSize: '20px', marginRight: '10px' }} />
                     {isSidebarVisible && 'Reports'}
                   </NavLink>
                 </li>
@@ -93,7 +94,7 @@ const SocietySidebar = ({ onSidebarToggle }) => {
                     className={({ isActive }) => (isActive ? 'active-link' : '')}
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    <FaUser style={{ fontSize: '20px', marginRight: '10px' }} />
+                    <FaBell style={{ fontSize: '20px', marginRight: '10px' }} />
                     {isSidebarVisible && 'Notifications'}
                   </NavLink>
                 </li>

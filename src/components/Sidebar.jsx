@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FaBars, FaHome, FaClipboardList, FaChartLine, FaMoneyBill, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import {FaBars, FaHome, FaClipboardList, FaChartLine, FaMoneyBill, FaChartPie, FaBell, FaLifeRing, FaSignOutAlt,
+} from 'react-icons/fa';
 import './Sidebar.css';
 
 const Sidebar = ({ onSidebarToggle }) => {
@@ -29,7 +30,7 @@ const Sidebar = ({ onSidebarToggle }) => {
 
       {/* Farmer Profile */}
       {isSidebarVisible && (
-        <div className="profile-section" onClick={() => navigate('/profile')} style={{ cursor: 'pointer' }}>
+        <div className="profile-section" onClick={() => navigate('/dashboard/profile')} style={{ cursor: 'pointer' }}>
           <img
             src="src/assets/icons/profile.png"
             alt="Profile"
@@ -48,15 +49,15 @@ const Sidebar = ({ onSidebarToggle }) => {
             <NavLink
               to="/dashboard"
               className={({ isActive }) => (isActive ? 'active-link' : '')}
-              style={{ textDecoration: 'none', color: 'inherit' }} // Inherit color from parent
+              style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <FaHome style={{ fontSize: '20px', marginRight: '10px' }} /> {/* Icon styling */}
+              <FaHome style={{ fontSize: '20px', marginRight: '10px' }} />
               {isSidebarVisible && 'Dashboard'}
             </NavLink>
           </li>
           <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <NavLink
-              to="/daily-records"
+              to="/dashboard/daily-records"
               className={({ isActive }) => (isActive ? 'active-link' : '')}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
@@ -66,7 +67,7 @@ const Sidebar = ({ onSidebarToggle }) => {
           </li>
           <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <NavLink
-              to="/monthly-reports"
+              to="/dashboard/monthly-reports"
               className={({ isActive }) => (isActive ? 'active-link' : '')}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
@@ -76,7 +77,7 @@ const Sidebar = ({ onSidebarToggle }) => {
           </li>
           <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <NavLink
-              to="/payments"
+              to="/dashboard/payments"
               className={({ isActive }) => (isActive ? 'active-link' : '')}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
@@ -86,12 +87,32 @@ const Sidebar = ({ onSidebarToggle }) => {
           </li>
           <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <NavLink
-              to="/profile"
+              to="/dashboard/profit-analysis"
               className={({ isActive }) => (isActive ? 'active-link' : '')}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <FaUser style={{ fontSize: '20px', marginRight: '10px' }} />
-              {isSidebarVisible && 'Profile Settings'}
+              <FaChartPie style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Profit Analysis'}
+            </NavLink>
+          </li>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/dashboard/notifications"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <FaBell style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Notifications'}
+            </NavLink>
+          </li>
+          <li style={{ color: 'white', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <NavLink
+              to="/dashboard/support"
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <FaLifeRing style={{ fontSize: '20px', marginRight: '10px' }} />
+              {isSidebarVisible && 'Support'}
             </NavLink>
           </li>
         </ul>
